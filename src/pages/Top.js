@@ -6,6 +6,7 @@ import { makeStyles, Grid, Container, IconButton, Paper, InputBase} from "@mater
 import SearchIcon from '@material-ui/icons/Search';
 
 import { queryDiscovery }from '../utils/index';
+import Sample from './Sample';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+const style = {
+  width: "50%",
+  margin: "0 auto",
+  marginTop: 150,
+};
+
 
 const Top = () => {
   const [sendText, setSendText] = useState('');
@@ -43,8 +50,29 @@ const Top = () => {
 
   const onPressQuery = async (event) => {
     event.preventDefault();
-    const res = await queryDiscovery(sendText);
-    setRecvText(res.data.responseText);
+    // const res = await queryDiscovery(sendText);
+    const res = {
+      "total": 20,
+      "items": [
+        {
+          "id": 1,
+          "name": "ザバス ホエイプロテイン100 リッチショコラ味 1050g (約50食分)",
+          "flavor": "リッチショコラ味"
+        },
+        {
+          "id": 2,
+          "name": "ザバス ホエイプロテイン200 リッチショコラ味 1050g (約50食分)",
+          "flavor": "バニラ味"
+        },
+        {
+          "id": 3,
+          "name": "ザバス ホエイプロテイン300 リッチショコラ味 1050g (約50食分)",
+          "flavor": "ストロベリー味"
+        }                    
+      ]
+    }
+    // setRecvText(res.data.responseText);
+    console.log("RES");
     console.log(res);
     // setSendText('');
   }
@@ -69,6 +97,9 @@ const Top = () => {
           </IconButton>
         </Paper>
       </form>
+      <div style={style}>
+        <Sample></Sample>
+      </div>
       <Grid className={classes.grid}>
         <Container>
           <Grid>
