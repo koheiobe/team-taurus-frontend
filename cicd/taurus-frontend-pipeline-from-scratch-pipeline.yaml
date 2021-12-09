@@ -53,7 +53,7 @@ spec:
     #         - test
     - name: build-image
       runAfter:
-        - run-tests
+        - install-dependencies
       taskRef:
         kind: Task
         name: buildah
@@ -86,6 +86,6 @@ spec:
           workspace: pipeline-shared-data
       params:
         - name: app-namespace
-          value: taurus-frontend-pipeline-from-scratch
+          value: team-taurus-frontend
         - name: app-name
-          value: taurus-frontend-pipeline-from-scratch
+          value: team-taurus-frontend
