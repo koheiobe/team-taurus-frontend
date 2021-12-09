@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  annotations:
+    volume.beta.kubernetes.io/storage-provisioner: ibm.io/ibmc-block
+  name: taurus-frontend-pvc
+  namespace: team-taurus-frontend
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
