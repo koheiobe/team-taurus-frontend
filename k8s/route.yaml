@@ -10,6 +10,6 @@ spec:
     termination: edge
   to:
      kind: Service
-     name: team-taurus-frontend-pipeline-from-scratch
+     name: team-taurus-frontend
      weight: 100
   wildcardPolicy: None
