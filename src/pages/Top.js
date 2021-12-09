@@ -38,7 +38,8 @@ const useStyles = makeStyles((theme) => ({
 const Top = () => {
   const [sendText, setSendText] = useState('');
   const [recvText, setRecvText] = useState('');
-
+  const [searchedObjects, setSearchedObjects] = useState({});
+  let searchedData ={};
   const classes = useStyles();
 
   const onPressQuery = async (event) => {
@@ -55,7 +56,7 @@ const Top = () => {
         <Paper className={classes.root}>
           <InputBase
             className={classes.input}
-            placeholder="Watson Discovery で検索"
+            placeholder="バニラ"
             inputProps={{ 'aria-label': 'search watson discovery' }}
             onChange={(e)=>{setSendText(e.target.value)}}
           />
